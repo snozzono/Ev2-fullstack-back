@@ -1,5 +1,6 @@
 package com.duoc.trabajo22.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -18,6 +19,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "manga")
+@JsonIgnoreProperties({"carritos", "comentarios", "detallepedidos", "favoritos", "hibernateLazyInitializer", "handler"})
 public class Manga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

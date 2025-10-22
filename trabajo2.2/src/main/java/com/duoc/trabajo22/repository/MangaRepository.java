@@ -150,5 +150,6 @@ public interface MangaRepository extends JpaRepository<Manga, Integer> {
     /**
      * Buscar mangas por múltiples categorías
      */
-    @Query("SELECT DISTINCT m FROM Manga m JOIN m.categorias")
+    @Query("SELECT DISTINCT m FROM Manga m JOIN m.categorias c WHERE c.id = :categoriaId")
     List<Manga> findMangasByCategoria(@Param("categoriaId") Integer categoriaId);
+}

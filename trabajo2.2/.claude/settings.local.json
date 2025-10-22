@@ -9,7 +9,13 @@
       "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo create EV2-FULLSTACK2-BACKEND --public --source=. --remote=origin-new --push)",
       "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo create EV2-FULLSTACK2-BACKEND --public --description \"Backend del proyecto fullstack - Evaluación 2\")",
       "Bash(git remote set-url origin https://github.com/snozzono/EV2-FULLSTACK2-BACKEND.git)",
-      "Bash(git push -u origin main)"
+      "Bash(git push -u origin main)",
+      "Bash(dir:*)",
+      "Bash(mvn test:*)",
+      "Bash(mvn clean test:*)",
+      "Bash(cat:*)",
+      "Bash(mvn clean package:*)",
+      "Bash(mvn clean install:*)"
     ],
     "deny": [],
     "ask": []
