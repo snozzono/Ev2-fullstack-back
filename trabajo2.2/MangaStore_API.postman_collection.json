@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "mangastore-api-collection",
+		"name": "MangaStore API",
+		"description": "Colección de endpoints para la API de MangaStore - Evaluación 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticación",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@mangastore.com\",\n  \"password\": \"admin123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login de usuario. Retorna información del usuario autenticado."
+					},
+					"response": []
+				},
+				{
+					"name": "Validar Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/auth/validar-admin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"validar-admin",
+								"1"
+							]
+						},
+						"description": "Valida si un usuario es administrador (super-admin o vendedor)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Obtener todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Obtiene la lista de todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						},
+						"description": "Obtiene un usuario específico por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"run\": \"12345678-9\",\n  \"nombre\": \"Juan\",\n  \"apellidos\": \"Pérez González\",\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"password123\",\n  \"fechaNacimiento\": \"1990-05-15\",\n  \"tipoUsuario\": \"cliente\",\n  \"direccion\": \"Av. Libertador 1234, Santiago\",\n  \"telefono\": \"+56987654321\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Crea un nuevo usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"run\": \"12345678-9\",\n  \"nombre\": \"Juan Carlos\",\n  \"apellidos\": \"Pérez González\",\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"newpassword123\",\n  \"fechaNacimiento\": \"1990-05-15\",\n  \"tipoUsuario\": \"cliente\",\n  \"direccion\": \"Av. Providencia 2000, Santiago\",\n  \"telefono\": \"+56987654321\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"2"
+							]
+						},
+						"description": "Actualiza un usuario existente"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"2"
+							]
+						},
+						"description": "Elimina un usuario por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Inactivar usuario",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/2/inactivar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"2",
+								"inactivar"
+							]
+						},
+						"description": "Inactiva un usuario (cambia activo a 0)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos (Mangas)",
+			"item": [
+				{
+					"name": "Obtener todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "Obtiene la lista de todos los productos (mangas)"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						},
+						"description": "Obtiene un producto específico por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigo\": \"MNG016\",\n  \"titulo\": \"Tokyo Revengers Vol. 1\",\n  \"tituloOriginal\": \"東京卍リベンジャーズ\",\n  \"autor\": \"Ken Wakui\",\n  \"ilustrador\": \"Ken Wakui\",\n  \"descripcion\": \"Viajes en el tiempo y pandillas\",\n  \"añoPublicacion\": 2017,\n  \"isbn\": \"978-1-64651-070-7\",\n  \"paginas\": 192,\n  \"idioma\": \"Español\",\n  \"estadoSerie\": \"en_curso\",\n  \"precio\": 9990.00,\n  \"stock\": 40,\n  \"stockCritico\": 5,\n  \"imagenPortada\": \"https://example.com/tokyorevengers1.jpg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "Crea un nuevo producto"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar producto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"One Piece Vol. 1 - Edición Especial\",\n  \"descripcion\": \"La aventura de Monkey D. Luffy en busca del One Piece - Edición Especial\",\n  \"precio\": 12990.00,\n  \"stock\": 30,\n  \"imagenPortada\": \"https://example.com/onepiece1-special.jpg\",\n  \"autor\": \"Eiichiro Oda\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						},
+						"description": "Actualiza un producto existente"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"16"
+							]
+						},
+						"description": "Elimina un producto por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Inactivar producto",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/1/inactivar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"inactivar"
+							]
+						},
+						"description": "Inactiva un producto (cambia activo a 0)"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar stock",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/1/stock?cantidad=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"1",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "cantidad",
+									"value": "10",
+									"description": "Cantidad a agregar (positivo) o restar (negativo)"
+								}
+							]
+						},
+						"description": "Actualiza el stock de un producto. Cantidad positiva aumenta, negativa disminuye."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
