@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add -A)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nActualización del backend: implementación de nuevos servicios y controladores\n\n- Agregados CarritoController y CarritoService\n- Actualizados múltiples repositorios para mejorar las queries\n- Eliminados DTOs obsoletos y AuthController\n- Actualizaciones en BlogController y BlogService\n- Modificaciones en pom.xml y modelo de base de datos\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(gh --version)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" --version)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" auth status)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo create EV2-FULLSTACK2-BACKEND --public --source=. --remote=origin-new --push)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo create EV2-FULLSTACK2-BACKEND --public --description \"Backend del proyecto fullstack - Evaluación 2\")",
+      "Bash(git remote set-url origin https://github.com/snozzono/EV2-FULLSTACK2-BACKEND.git)",
+      "Bash(git push -u origin main)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
